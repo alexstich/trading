@@ -23,7 +23,6 @@
 		FAEF89392AADB7D40050C529 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89382AADB7D40050C529 /* Constants.swift */; };
 		FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */; };
 		FAEF89402AAE180A0050C529 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893E2AADCDF60050C529 /* SocketMessage.swift */; };
-		FAEF89422AAE1D0C0050C529 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89412AAE1D0C0050C529 /* DateManager.swift */; };
 		FAEF89452AAE25010050C529 /* ExtKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		FAEF89382AADB7D40050C529 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
 		FAEF893E2AADCDF60050C529 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
-		FAEF89412AAE1D0C0050C529 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtKeyedDecodingContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,6 @@
 				FAEF89312AADACA10050C529 /* storyboadrs */,
 				FAEF892E2AADAC3B0050C529 /* ui */,
 				FAEF89322AADACC50050C529 /* models */,
-				FAEF89432AAE1D170050C529 /* helpers */,
 				FAEF892B2AAD02BF0050C529 /* layouts */,
 				FAEF89352AADB6E90050C529 /* services */,
 				FAEF893A2AADCD340050C529 /* socket */,
@@ -194,14 +191,6 @@
 				FAEF893E2AADCDF60050C529 /* SocketMessage.swift */,
 			);
 			path = socket;
-			sourceTree = "<group>";
-		};
-		FAEF89432AAE1D170050C529 /* helpers */ = {
-			isa = PBXGroup;
-			children = (
-				FAEF89412AAE1D0C0050C529 /* DateManager.swift */,
-			);
-			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */,
-				FAEF89422AAE1D0C0050C529 /* DateManager.swift in Sources */,
 				FAEF89272AACFBB50050C529 /* ExtDouble.swift in Sources */,
 				FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */,
 				FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */,
@@ -480,7 +468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 94N48NBN66;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = trading/Info.plist;
@@ -494,7 +482,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pro.avgrebenkin.trading;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -512,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 94N48NBN66;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = trading/Info.plist;
@@ -526,7 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pro.avgrebenkin.trading;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

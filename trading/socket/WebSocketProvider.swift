@@ -74,9 +74,6 @@ class WebSocketProvider
     ) throws
     {
         let encoder = JSONEncoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateManager.FORMAT_LONG
-        encoder.dateEncodingStrategy = .formatted(dateFormatter)
         
         let socket_message = WebSocketMessage(type: type, data: data)
         
@@ -174,9 +171,6 @@ extension WebSocketProvider: WebSocketDelegate
     private func decode(data: Data) -> WebSocketMessage?
     {
         let decoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateManager.FORMAT_LONG
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
 
         if let message = try? decoder.decode(WebSocketMessage.self, from: data) {
             print(String(describing: message))

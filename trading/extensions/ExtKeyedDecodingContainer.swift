@@ -21,30 +21,6 @@ extension KeyedDecodingContainer where Key: CodingKey
         return arr
     }
     
-    func decodeDate(from key: Key, format: String = DateManager.FORMAT_LONG) throws -> Date?
-    {
-        let dateAsString = try decode(String.self, forKey: key)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = format
-        
-        if let date = dateFormatter.date(from: dateAsString) {
-            return date
-        }
-        
-        for i in 0..<DateManager.ALL_FORMATS.count {
-            let format = DateManager.ALL_FORMATS[i]
-            dateFormatter.dateFormat = format
-            
-            if let date = dateFormatter.date(from: dateAsString) {
-                return date
-            }
-        }
-        
-        return nil
-    }
-    
     func decodeInt16(from key: Key) throws -> Int16?
     {
         let num = try? decode(Int16.self, forKey: key)
