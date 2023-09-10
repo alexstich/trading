@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import DeepDiff
 
 class TableViewController: UITableViewController
 {
@@ -16,7 +17,10 @@ class TableViewController: UITableViewController
     
     private var stockQuotes: [StockQuoteModel] = [] {
         didSet {
-            tableView.reloadData()
+            
+
+            
+//            tableView.reloadData()
         }
     }
     
@@ -38,13 +42,21 @@ class TableViewController: UITableViewController
         tableView.bounces = false
         tableView.estimatedRowHeight = 45
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
     }
     
     private func setEvents()
     {
         vm?.stockQuotes.subscribe(
             onNext:{ [weak self] stockQuotes in
-                self?.stockQuotes = stockQuotes
+                
+                let oldItems = self?.stockQuotes ?? [StockQuoteModel]()
+                let newItems = stockQuotes
+                let changes = diff(old: oldItems, new: newItems)
+
+                self?.tableView.reload(changes: changes, section: 0, updateData: { [weak self] in
+                  self?.stockQuotes = newItems
+                })
             }
         ).disposed(by: disposeBag)
     }

@@ -70,7 +70,7 @@ class StockQuoteTableViewCell: UITableViewCell
     {
         self.quote = quote
         
-        setDeltaPriceInPercentage()
+        setPriceDeltaInPercent()
         
         TickerLabel.text = quote.ticker.uppercased()
         MarketAndStockNameLabel.text = quote.lastTradeMarketName.uppercased() + " | " + quote.stockName
@@ -82,38 +82,24 @@ class StockQuoteTableViewCell: UITableViewCell
     
     private func setPriceLabel()
     {
-        var numberOfDigitsAfterComma = StockQuoteTableViewCell.priceMaxDigitsAfterComma
-        
-        if let numberOfDigitsInIntegerPart = quote.currentPrice.numberOfDigitsInIntegerPart() {
-            numberOfDigitsAfterComma = StockQuoteTableViewCell.priceMaxDigitsAfterComma - numberOfDigitsInIntegerPart
-            numberOfDigitsAfterComma = (numberOfDigitsAfterComma < StockQuoteTableViewCell.priceMinDigitsAfterComma) ? StockQuoteTableViewCell.priceMinDigitsAfterComma : numberOfDigitsAfterComma
-        }
-        
         PriceLabel.text = quote.currentPrice.formatToString(
             minimumFractionDigits: StockQuoteTableViewCell.priceMinDigitsAfterComma,
-            maximumFractionDigits: numberOfDigitsAfterComma
+            maximumFractionDigits: quote.minStep.numberOfDigitsAfterComma()
         )
     }
     
     private func setDeltaPriceLabel()
     {
-        var numberOfDigitsAfterComma = StockQuoteTableViewCell.priceDeltaMaxDigitsAfterComma
-        
-        if let numberOfDigitsInIntegerPart = quote.priceDelta.numberOfDigitsInIntegerPart() {
-            numberOfDigitsAfterComma = StockQuoteTableViewCell.priceDeltaMaxDigitsAfterComma - numberOfDigitsInIntegerPart
-            numberOfDigitsAfterComma = (numberOfDigitsAfterComma < StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma) ? StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma : numberOfDigitsAfterComma
-        }
-
         PriceDeltaLabel.text =
             "( " +
             quote.priceDelta.formatToString(
                 minimumFractionDigits: StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma,
-                maximumFractionDigits: numberOfDigitsAfterComma
+                maximumFractionDigits: quote.minStep.numberOfDigitsAfterComma()
             ) +
             " )"
     }
     
-    private func setDeltaPriceInPercentage()
+    private func setPriceDeltaInPercent()
     {
         showPriceDeltaInPercentBackground()
     

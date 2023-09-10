@@ -42,4 +42,16 @@ extension Double
         let integerPart = Int(self)
         return String(abs(integerPart)).count
     }
+    
+    func numberOfDigitsAfterComma() -> Int
+    {
+        let numberString = String(self)
+        let components = numberString.split(separator: ".")
+        
+        guard components.count == 2 else {
+            return 0
+        }
+        
+        return components[1].count
+    }
 }

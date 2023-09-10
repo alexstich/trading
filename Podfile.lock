@@ -1,28 +1,32 @@
 PODS:
+  - DeepDiff (2.3.1)
   - Kingfisher (6.3.1)
   - RxSwift (6.5.0)
   - SnapKit (5.6.0)
   - Starscream (4.0.4)
 
 DEPENDENCIES:
+  - DeepDiff
   - Kingfisher (~> 6.3.1)
   - RxSwift (~> 6.5.0)
-  - SnapKit
+  - SnapKit (~> 5.6.0)
   - Starscream (~> 4.0.4)
 
 SPEC REPOS:
   trunk:
+    - DeepDiff
     - Kingfisher
     - RxSwift
     - SnapKit
     - Starscream
 
 SPEC CHECKSUMS:
+  DeepDiff: e5ae6c50d0321568e4508cec5930b9f10bb293fc
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 6ff91da12b6c927fd85fce87e48de7b2645da84c
+PODFILE CHECKSUM: 5ad52021cbcb510ce33e0020133fb30428afa83c
 
 COCOAPODS: 1.12.1

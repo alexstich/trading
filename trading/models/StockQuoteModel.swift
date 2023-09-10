@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import DeepDiff
 
 class StockQuoteModel
 {
@@ -42,5 +43,18 @@ class StockQuoteModel
     func percentageDeltaIsPositive() -> Bool
     {
         return priceDeltaInPercent > 0
+    }
+}
+
+extension StockQuoteModel: DiffAware
+{
+    var diffId: String
+    {
+        return ticker
+    }
+    
+    static func compareContent(_ a: StockQuoteModel, _ b: StockQuoteModel) -> Bool
+    {
+        return a.ticker == b.ticker && a.currentPrice == b.currentPrice
     }
 }
