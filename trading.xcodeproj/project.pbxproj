@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E509DCCA1912F21ACFD6B059 /* Pods_trading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14A8105F923D7E93884A7FC /* Pods_trading.framework */; };
+		FA3183632AACAE510025D28A /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3183622AACAE510025D28A /* NetworkProvider.swift */; };
 		FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */; };
-		FAC867702AABA72A00C45C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8676F2AABA72A00C45C9B /* SceneDelegate.swift */; };
-		FAC867722AABA72A00C45C9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC867712AABA72A00C45C9B /* ViewController.swift */; };
+		FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC867712AABA72A00C45C9B /* TableViewController.swift */; };
 		FAC867752AABA72A00C45C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC867732AABA72A00C45C9B /* Main.storyboard */; };
 		FAC867772AABA73400C45C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC867762AABA73400C45C9B /* Assets.xcassets */; };
 		FAC8677A2AABA73400C45C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC867782AABA73400C45C9B /* LaunchScreen.storyboard */; };
+		FAEF89202AACE3F60050C529 /* StockQuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF891F2AACE3F60050C529 /* StockQuoteTableViewCell.swift */; };
+		FAEF89222AACE7B00050C529 /* StockQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89212AACE7B00050C529 /* StockQuoteModel.swift */; };
+		FAEF89272AACFBB50050C529 /* ExtDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89262AACFBB50050C529 /* ExtDouble.swift */; };
+		FAEF892A2AACFF1F0050C529 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89292AACFF1F0050C529 /* MyColors.swift */; };
+		FAEF892D2AAD02D80050C529 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF892C2AAD02D80050C529 /* Label.swift */; };
+		FAEF89342AADAD870050C529 /* StockQuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */; };
+		FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */; };
+		FAEF89392AADB7D40050C529 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89382AADB7D40050C529 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1CBDCC0357093EA2039156 /* Pods-trading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading.release.xcconfig"; path = "Target Support Files/Pods-trading/Pods-trading.release.xcconfig"; sourceTree = "<group>"; };
+		4345AB1B1AA0F76FE1BA732F /* Pods-trading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading.debug.xcconfig"; path = "Target Support Files/Pods-trading/Pods-trading.debug.xcconfig"; sourceTree = "<group>"; };
+		F14A8105F923D7E93884A7FC /* Pods_trading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3183622AACAE510025D28A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FAC8676A2AABA72A00C45C9B /* trading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAC8676F2AABA72A00C45C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAC867712AABA72A00C45C9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAC867712AABA72A00C45C9B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FAC867742AABA72A00C45C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC867762AABA73400C45C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC867792AABA73400C45C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC8677B2AABA73400C45C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAEF891F2AACE3F60050C529 /* StockQuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTableViewCell.swift; sourceTree = "<group>"; };
+		FAEF89212AACE7B00050C529 /* StockQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteModel.swift; sourceTree = "<group>"; };
+		FAEF89262AACFBB50050C529 /* ExtDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDouble.swift; sourceTree = "<group>"; };
+		FAEF89292AACFF1F0050C529 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		FAEF892C2AAD02D80050C529 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesListViewModel.swift; sourceTree = "<group>"; };
+		FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesProvider.swift; sourceTree = "<group>"; };
+		FAEF89382AADB7D40050C529 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E509DCCA1912F21ACFD6B059 /* Pods_trading.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251181686F3658B78DC5D811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F14A8105F923D7E93884A7FC /* Pods_trading.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4243D3741E2818349DE2ECD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4345AB1B1AA0F76FE1BA732F /* Pods-trading.debug.xcconfig */,
+				2D1CBDCC0357093EA2039156 /* Pods-trading.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FAC867612AABA72A00C45C9B = {
 			isa = PBXGroup;
 			children = (
 				FAC8676C2AABA72A00C45C9B /* trading */,
 				FAC8676B2AABA72A00C45C9B /* Products */,
+				4243D3741E2818349DE2ECD1 /* Pods */,
+				251181686F3658B78DC5D811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,87 @@
 		FAC8676C2AABA72A00C45C9B /* trading */ = {
 			isa = PBXGroup;
 			children = (
-				FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */,
-				FAC8676F2AABA72A00C45C9B /* SceneDelegate.swift */,
-				FAC867712AABA72A00C45C9B /* ViewController.swift */,
-				FAC867732AABA72A00C45C9B /* Main.storyboard */,
+				FAEF892F2AADAC470050C529 /* base */,
+				FAEF89312AADACA10050C529 /* storyboadrs */,
+				FAEF892E2AADAC3B0050C529 /* ui */,
+				FAEF89322AADACC50050C529 /* models */,
+				FAEF892B2AAD02BF0050C529 /* layouts */,
+				FAEF89352AADB6E90050C529 /* services */,
+				FAEF89252AACFA450050C529 /* extensions */,
+				FAEF89282AACFF0D0050C529 /* resources */,
 				FAC867762AABA73400C45C9B /* Assets.xcassets */,
-				FAC867782AABA73400C45C9B /* LaunchScreen.storyboard */,
 				FAC8677B2AABA73400C45C9B /* Info.plist */,
 			);
 			path = trading;
+			sourceTree = "<group>";
+		};
+		FAEF89252AACFA450050C529 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF89262AACFBB50050C529 /* ExtDouble.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		FAEF89282AACFF0D0050C529 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF89292AACFF1F0050C529 /* MyColors.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		FAEF892B2AAD02BF0050C529 /* layouts */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF892C2AAD02D80050C529 /* Label.swift */,
+			);
+			path = layouts;
+			sourceTree = "<group>";
+		};
+		FAEF892E2AADAC3B0050C529 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FAC867712AABA72A00C45C9B /* TableViewController.swift */,
+				FAEF891F2AACE3F60050C529 /* StockQuoteTableViewCell.swift */,
+				FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		FAEF892F2AADAC470050C529 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */,
+				FAEF89382AADB7D40050C529 /* Constants.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		FAEF89312AADACA10050C529 /* storyboadrs */ = {
+			isa = PBXGroup;
+			children = (
+				FAC867782AABA73400C45C9B /* LaunchScreen.storyboard */,
+				FAC867732AABA72A00C45C9B /* Main.storyboard */,
+			);
+			path = storyboadrs;
+			sourceTree = "<group>";
+		};
+		FAEF89322AADACC50050C529 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF89212AACE7B00050C529 /* StockQuoteModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FAEF89352AADB6E90050C529 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FA3183622AACAE510025D28A /* NetworkProvider.swift */,
+				FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC8677E2AABA73400C45C9B /* Build configuration list for PBXNativeTarget "trading" */;
 			buildPhases = (
+				E5507C83E21890C2421E94EB /* [CP] Check Pods Manifest.lock */,
 				FAC867662AABA72A00C45C9B /* Sources */,
 				FAC867672AABA72A00C45C9B /* Frameworks */,
 				FAC867682AABA72A00C45C9B /* Resources */,
+				130CCC711231ED11F31C8066 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +247,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		130CCC711231ED11F31C8066 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trading/Pods-trading-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trading/Pods-trading-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trading/Pods-trading-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5507C83E21890C2421E94EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trading-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAC867662AABA72A00C45C9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC867722AABA72A00C45C9B /* ViewController.swift in Sources */,
+				FAEF89272AACFBB50050C529 /* ExtDouble.swift in Sources */,
+				FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */,
 				FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */,
-				FAC867702AABA72A00C45C9B /* SceneDelegate.swift in Sources */,
+				FAEF89392AADB7D40050C529 /* Constants.swift in Sources */,
+				FAEF892A2AACFF1F0050C529 /* MyColors.swift in Sources */,
+				FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */,
+				FAEF89202AACE3F60050C529 /* StockQuoteTableViewCell.swift in Sources */,
+				FA3183632AACAE510025D28A /* NetworkProvider.swift in Sources */,
+				FAEF892D2AAD02D80050C529 /* Label.swift in Sources */,
+				FAEF89342AADAD870050C529 /* StockQuotesListViewModel.swift in Sources */,
+				FAEF89222AACE7B00050C529 /* StockQuoteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +446,7 @@
 		};
 		FAC8677F2AABA73400C45C9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4345AB1B1AA0F76FE1BA732F /* Pods-trading.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,11 +456,12 @@
 				DEVELOPMENT_TEAM = 94N48NBN66;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = trading/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Trading;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +478,7 @@
 		};
 		FAC867802AABA73400C45C9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D1CBDCC0357093EA2039156 /* Pods-trading.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,11 +488,12 @@
 				DEVELOPMENT_TEAM = 94N48NBN66;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = trading/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Trading;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

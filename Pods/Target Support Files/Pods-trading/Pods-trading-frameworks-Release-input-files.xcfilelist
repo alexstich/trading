@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-trading/Pods-trading-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
