@@ -91,8 +91,3 @@ iOSInjectionProject/
 
 
 Pods/
-
-trading/socket 
-trading/extensions/ExtDate.swift 
-trading/helpers
-trading/base/AppDelegateWebSocketExt.swift

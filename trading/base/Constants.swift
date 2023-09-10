@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants
 {
-    static let test_mode = true
+    static let test_mode = false
 }

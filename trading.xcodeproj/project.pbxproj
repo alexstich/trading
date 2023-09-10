@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E509DCCA1912F21ACFD6B059 /* Pods_trading.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F14A8105F923D7E93884A7FC /* Pods_trading.framework */; };
-		FA3183632AACAE510025D28A /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3183622AACAE510025D28A /* NetworkProvider.swift */; };
 		FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */; };
 		FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC867712AABA72A00C45C9B /* TableViewController.swift */; };
 		FAC867752AABA72A00C45C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC867732AABA72A00C45C9B /* Main.storyboard */; };
@@ -22,13 +21,16 @@
 		FAEF89342AADAD870050C529 /* StockQuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */; };
 		FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */; };
 		FAEF89392AADB7D40050C529 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89382AADB7D40050C529 /* Constants.swift */; };
+		FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */; };
+		FAEF89402AAE180A0050C529 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893E2AADCDF60050C529 /* SocketMessage.swift */; };
+		FAEF89422AAE1D0C0050C529 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89412AAE1D0C0050C529 /* DateManager.swift */; };
+		FAEF89452AAE25010050C529 /* ExtKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D1CBDCC0357093EA2039156 /* Pods-trading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading.release.xcconfig"; path = "Target Support Files/Pods-trading/Pods-trading.release.xcconfig"; sourceTree = "<group>"; };
 		4345AB1B1AA0F76FE1BA732F /* Pods-trading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trading.debug.xcconfig"; path = "Target Support Files/Pods-trading/Pods-trading.debug.xcconfig"; sourceTree = "<group>"; };
 		F14A8105F923D7E93884A7FC /* Pods_trading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA3183622AACAE510025D28A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FAC8676A2AABA72A00C45C9B /* trading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trading.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC867712AABA72A00C45C9B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,10 @@
 		FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesListViewModel.swift; sourceTree = "<group>"; };
 		FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesProvider.swift; sourceTree = "<group>"; };
 		FAEF89382AADB7D40050C529 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		FAEF893E2AADCDF60050C529 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
+		FAEF89412AAE1D0C0050C529 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtKeyedDecodingContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,10 @@
 				FAEF89312AADACA10050C529 /* storyboadrs */,
 				FAEF892E2AADAC3B0050C529 /* ui */,
 				FAEF89322AADACC50050C529 /* models */,
+				FAEF89432AAE1D170050C529 /* helpers */,
 				FAEF892B2AAD02BF0050C529 /* layouts */,
 				FAEF89352AADB6E90050C529 /* services */,
+				FAEF893A2AADCD340050C529 /* socket */,
 				FAEF89252AACFA450050C529 /* extensions */,
 				FAEF89282AACFF0D0050C529 /* resources */,
 				FAC867762AABA73400C45C9B /* Assets.xcassets */,
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEF89262AACFBB50050C529 /* ExtDouble.swift */,
+				FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -173,10 +182,26 @@
 		FAEF89352AADB6E90050C529 /* services */ = {
 			isa = PBXGroup;
 			children = (
-				FA3183622AACAE510025D28A /* NetworkProvider.swift */,
 				FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		FAEF893A2AADCD340050C529 /* socket */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */,
+				FAEF893E2AADCDF60050C529 /* SocketMessage.swift */,
+			);
+			path = socket;
+			sourceTree = "<group>";
+		};
+		FAEF89432AAE1D170050C529 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF89412AAE1D0C0050C529 /* DateManager.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */,
+				FAEF89422AAE1D0C0050C529 /* DateManager.swift in Sources */,
 				FAEF89272AACFBB50050C529 /* ExtDouble.swift in Sources */,
 				FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */,
 				FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */,
@@ -301,9 +328,10 @@
 				FAEF892A2AACFF1F0050C529 /* MyColors.swift in Sources */,
 				FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */,
 				FAEF89202AACE3F60050C529 /* StockQuoteTableViewCell.swift in Sources */,
-				FA3183632AACAE510025D28A /* NetworkProvider.swift in Sources */,
 				FAEF892D2AAD02D80050C529 /* Label.swift in Sources */,
 				FAEF89342AADAD870050C529 /* StockQuotesListViewModel.swift in Sources */,
+				FAEF89452AAE25010050C529 /* ExtKeyedDecodingContainer.swift in Sources */,
+				FAEF89402AAE180A0050C529 /* SocketMessage.swift in Sources */,
 				FAEF89222AACE7B00050C529 /* StockQuoteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

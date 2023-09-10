@@ -10,10 +10,10 @@ import RxSwift
 
 protocol StockQuotesListViewModelProtocol: AnyObject
 {
-    var stockQuotes: BehaviorSubject<String?> { get }
+    var stockQuotes: BehaviorSubject<[StockQuoteModel]> { get }
 }
 
-class StockQuotesListViewModel
+class StockQuotesListViewModel: StockQuotesListViewModelProtocol
 {
     let availableStockTickers: [String] = [
         "RSTI",
@@ -48,13 +48,43 @@ class StockQuotesListViewModel
         "SGGD.EU",
     ]
     
-    let stockQuotes: BehaviorSubject<[StockQuoteModel]> = BehaviorSubject(value: [StockQuoteModel]())
+    var stockQuotes: BehaviorSubject<[StockQuoteModel]> = BehaviorSubject(value: [StockQuoteModel]())
     
     init()
     {
         StockQuotesProvider.instance.observeStockQuotes(for: availableStockTickers) { [weak self] stockQuote in
-            self?.stockQuotes.onNext([stockQuote])
+            
+            guard let self = self else { return }
+            
+            let queue = DispatchQueue(label: "stock_provider.serialqueue", qos:.userInteractive)
+            queue.async { [weak self] in
+                if let newStockQuotes = self?.insertStockQuote(stockQuote: stockQuote) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.stockQuotes.onNext(newStockQuotes)
+                    }
+                }
+            }
         }
+    }
+    
+    private func insertStockQuote(stockQuote: StockQuoteModel) -> [StockQuoteModel]
+    {
+        var stockQuotesArray = (try? self.stockQuotes.value()) ?? []
+        
+        var wasReplaced = false
+        for (index, quote) in stockQuotesArray.enumerated() {
+            if quote.ticker == stockQuote.ticker {
+                stockQuotesArray[index] = quote
+                wasReplaced = true
+                break
+            }
+        }
+        
+        if !wasReplaced {
+            stockQuotesArray.append(stockQuote)
+        }
+        
+        return stockQuotesArray
     }
 }
 

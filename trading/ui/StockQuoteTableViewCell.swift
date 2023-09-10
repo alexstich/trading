@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-
+import Kingfisher
+import SnapKit
 
 class StockQuoteTableViewCell: UITableViewCell
 {
@@ -30,12 +31,10 @@ class StockQuoteTableViewCell: UITableViewCell
     
     var quote: StockQuoteModel!
     var timer: Timer?
-    var timeInterval: Double = 2
+    var timeInterval: Double = 0.3
     
     override func prepareForReuse()
     {
-        quote = nil
-        
         TickerLabel.text = nil
         PriceDeltaInPercentLabel.text = nil
         MarketAndStockNameLabel.text = nil
@@ -45,6 +44,10 @@ class StockQuoteTableViewCell: UITableViewCell
         
         timer?.invalidate()
         timer = nil
+        
+        hidePriceDeltaInPercentBackground()
+        
+        quote = nil
     }
     
     override func awakeFromNib()
@@ -74,8 +77,7 @@ class StockQuoteTableViewCell: UITableViewCell
         
         setPriceLabel()
         setDeltaPriceLabel()
-        
-        StockLogoImageView.image = quote.stockLogo
+        setLogo()
     }
     
     private func setPriceLabel()
@@ -113,7 +115,7 @@ class StockQuoteTableViewCell: UITableViewCell
     
     private func setDeltaPriceInPercentage()
     {
-        showBackground()
+        showPriceDeltaInPercentBackground()
     
         PriceDeltaInPercentLabel.text = quote.priceDeltaInPercent.formatToString(
             minimumFractionDigits: StockQuoteTableViewCell.priceDeltaInPercentMaxDigitsAfterComma,
@@ -121,7 +123,36 @@ class StockQuoteTableViewCell: UITableViewCell
         )
     }
     
-    private func showBackground()
+    private func setLogo()
+    {
+        self.StockLogoImageView.kf.setImage(
+            with: quote.stockLogo,
+            options: [
+                .transition(ImageTransition.fade(0.3)),
+                .cacheOriginalImage,
+                .keepCurrentImageWhileLoading,
+                .backgroundDecode,
+                .fromMemoryCacheOrRefresh
+            ],
+            completionHandler: { [weak self] result in
+                
+                guard let self = self else { return }
+                
+                if case .success(_) = result {
+                    self.StockLogoImageView.snp.remakeConstraints({ make in
+                        make.width.height.equalTo(20)
+                    })
+                }
+                if case .failure(_) = result {
+                    self.StockLogoImageView.snp.remakeConstraints({ make in
+                        make.width.height.equalTo(0)
+                    })
+                }
+            }
+        )
+    }
+    
+    private func showPriceDeltaInPercentBackground()
     {
         if timer != nil {
             timer?.invalidate()
@@ -140,7 +171,7 @@ class StockQuoteTableViewCell: UITableViewCell
             self.timer = Timer.scheduledTimer(
                 timeInterval: self.timeInterval,
                 target: self,
-                selector: #selector(self.hideBackground),
+                selector: #selector(self.hidePriceDeltaInPercentBackground),
                 userInfo: nil,
                 repeats: false
             )
@@ -148,7 +179,7 @@ class StockQuoteTableViewCell: UITableViewCell
     }
     
     @objc
-    private func hideBackground()
+    private func hidePriceDeltaInPercentBackground()
     {
         PriceDeltaInPercentLabel.backgroundColor = .clear
         
