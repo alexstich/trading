@@ -15,14 +15,7 @@ class TableViewController: UITableViewController
     
     private var vm: StockQuotesListViewModel?
     
-    private var stockQuotes: [StockQuoteModel] = [] {
-        didSet {
-            
-
-            
-//            tableView.reloadData()
-        }
-    }
+    private var stockQuotes: [StockQuoteModel] = []
     
     override func viewDidLoad()
     {
