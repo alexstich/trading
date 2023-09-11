@@ -52,6 +52,11 @@ class StockQuotesListViewModel: StockQuotesListViewModelProtocol
     
     init()
     {
+       observeQuotes()
+    }
+    
+    func observeQuotes()
+    {
         StockQuotesProvider.instance.observeStockQuotes(for: availableStockTickers) { [weak self] stockQuote in
             
             guard let self = self else { return }

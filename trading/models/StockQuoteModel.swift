@@ -92,6 +92,6 @@ extension StockQuoteModel: DiffAware
     
     static func compareContent(_ a: StockQuoteModel, _ b: StockQuoteModel) -> Bool
     {
-        return a.currentPrice != b.currentPrice && a.priceDelta != b.priceDelta && a.priceDeltaInPercent != b.priceDeltaInPercent
+        return a.currentPrice == b.currentPrice && a.priceDelta == b.priceDelta && a.priceDeltaInPercent == b.priceDeltaInPercent
     }
 }

@@ -28,6 +28,11 @@ class TableViewController: UITableViewController
         setEvents()
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        vm?.observeQuotes()
+    }
+    
     private func setConfigTable()
     {
         title = "Stock list"
