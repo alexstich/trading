@@ -26,6 +26,9 @@ class TableViewController: UITableViewController
         vm = StockQuotesListViewModel()
         
         setEvents()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -37,10 +40,32 @@ class TableViewController: UITableViewController
     {
         title = "Stock list"
                 
-        tableView.bounces = false
+        tableView.bounces = true
         tableView.estimatedRowHeight = 45
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
+        
+        tableView.refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = MyColors.loader.getUIColor()
+        refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    private func appDidBecomeActive()
+    {
+        vm?.observeQuotes()
+    }
+    
+    @objc
+    private func refresh()
+    {
+        vm?.stockQuotes.onNext([])
+        vm?.observeQuotes()
+        refreshControl?.endRefreshing()
     }
     
     private func setEvents()

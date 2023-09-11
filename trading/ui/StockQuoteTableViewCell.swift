@@ -37,9 +37,7 @@ class StockQuoteTableViewCell: UITableViewCell
         StockLogoImageView.image = nil
         PriceDeltaLabel.text = nil
         PriceLabel.text = nil
-        
-        timer?.invalidate()
-        timer = nil
+
         quote = nil
     }
     
@@ -53,6 +51,7 @@ class StockQuoteTableViewCell: UITableViewCell
         PriceDeltaInPercentLabel.rightInset = 3
         PriceDeltaInPercentLabel.topInset = 0
         PriceDeltaInPercentLabel.bottomInset = 0
+        PriceDeltaInPercentLabel.backgroundColor = .clear
         
         TickerLabel.leftInset = 5
         
@@ -102,7 +101,6 @@ class StockQuoteTableViewCell: UITableViewCell
     
     private func setPriceDeltaInPercent()
     {
-        
         showPriceDeltaInPercentBackground()
     
         PriceDeltaInPercentLabel.text = quote.priceDeltaInPercent!.formatToString(
@@ -143,7 +141,9 @@ class StockQuoteTableViewCell: UITableViewCell
     private func showPriceDeltaInPercentBackground()
     {
         guard quote.trend != .none else {
-            hidePriceDeltaInPercentBackground()
+            if PriceDeltaInPercentLabel.backgroundColor == .clear {
+                hidePriceDeltaInPercentBackground()
+            }
             return
         }
             

@@ -11,6 +11,8 @@ import RxSwift
 protocol StockQuotesListViewModelProtocol: AnyObject
 {
     var stockQuotes: BehaviorSubject<[StockQuoteModel]> { get }
+    
+    func observeQuotes()
 }
 
 class StockQuotesListViewModel: StockQuotesListViewModelProtocol

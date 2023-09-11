@@ -12,6 +12,7 @@ enum MyColors: String
 {
     case percentage_red
     case percentage_green
+    case loader
     
     case white
     

@@ -50,9 +50,9 @@ struct StockQuoteModel
     {
         if model.currentPrice != nil {
             
-            if (self.currentPrice! - model.currentPrice!) > 0 {
+            if (model.currentPrice! - self.currentPrice!) > 0 {
                 self.trend = .positive
-            } else if (self.currentPrice! - model.currentPrice!) < 0 {
+            } else if (model.currentPrice! - self.currentPrice!) < 0 {
                 self.trend = .negative
             } else {
                 self.trend = .none
