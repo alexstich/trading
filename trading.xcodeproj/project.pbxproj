@@ -24,6 +24,8 @@
 		FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */; };
 		FAEF89402AAE180A0050C529 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893E2AADCDF60050C529 /* SocketMessage.swift */; };
 		FAEF89452AAE25010050C529 /* ExtKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */; };
+		FAEF89492AAEEA7C0050C529 /* WebSocketProviderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89482AAEEA7C0050C529 /* WebSocketProviderConfig.swift */; };
+		FAEF894B2AAEEBF90050C529 /* StockQuotesProviderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF894A2AAEEBF90050C529 /* StockQuotesProviderConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
 		FAEF893E2AADCDF60050C529 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
 		FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtKeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		FAEF89482AAEEA7C0050C529 /* WebSocketProviderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProviderConfig.swift; sourceTree = "<group>"; };
+		FAEF894A2AAEEBF90050C529 /* StockQuotesProviderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesProviderConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */,
+				FAEF894A2AAEEBF90050C529 /* StockQuotesProviderConfig.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			children = (
 				FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */,
 				FAEF893E2AADCDF60050C529 /* SocketMessage.swift */,
+				FAEF89482AAEEA7C0050C529 /* WebSocketProviderConfig.swift */,
 			);
 			path = socket;
 			sourceTree = "<group>";
@@ -308,9 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEF894B2AAEEBF90050C529 /* StockQuotesProviderConfig.swift in Sources */,
 				FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */,
 				FAEF89272AACFBB50050C529 /* ExtDouble.swift in Sources */,
 				FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */,
+				FAEF89492AAEEA7C0050C529 /* WebSocketProviderConfig.swift in Sources */,
 				FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */,
 				FAEF89392AADB7D40050C529 /* Constants.swift in Sources */,
 				FAEF892A2AACFF1F0050C529 /* MyColors.swift in Sources */,

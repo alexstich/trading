@@ -61,7 +61,7 @@ class StockQuoteTableViewCell: UITableViewCell
         PriceDeltaInPercentLabel.topInset = 0
         PriceDeltaInPercentLabel.bottomInset = 0
         
-        TickerLabel.leftInset = 10
+        TickerLabel.leftInset = 5
         
         PriceLabel.rightInset = 5
     }

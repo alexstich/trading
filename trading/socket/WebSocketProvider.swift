@@ -49,7 +49,7 @@ class WebSocketProvider
             return
         }
         
-        let request = URLRequest(url: URL(string: "wss://wss.tradernet.ru")!)
+        let request = URLRequest(url: WebSocketProviderConfig.shared.wssUrlHost)
         
         self.socket = WebSocket(request: request, certPinner: nil)
         self.socket!.respondToPingWithPong = true

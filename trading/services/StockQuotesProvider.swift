@@ -35,7 +35,7 @@ class StockQuotesProvider
             self.handler?(quote)
         }
         
-        WebSocketProvider.getInstance.establishConnection()
+        WebSocketProvider.getInstance.checkConnection()
         WebSocketProvider.getInstance.delegate = self
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             do {
@@ -65,14 +65,18 @@ extension StockQuotesProvider: WebSocketProviderDelegate
         
         switch type {
         case .q:
+            
+            let ticker = msg.quoteData?.c?.uppercased() ?? ""
+            
             let stockModel = StockQuoteModel(
-                ticker: msg.quoteData?.c?.uppercased() ?? "",
+                ticker: ticker,
                 lastTradeMarketName: msg.quoteData?.ltr?.uppercased() ?? "",
                 stockName: msg.quoteData?.name ?? "",
                 currentPrice: msg.quoteData?.ltp ?? 0,
                 priceDeltaInPercent: msg.quoteData?.pcp ?? 0,
                 priceDelta: msg.quoteData?.chg ?? 0,
-                minStep: msg.quoteData?.min_step ?? 0.01
+                minStep: msg.quoteData?.min_step ?? 0.01,
+                stockLogo: URL(string: StockQuotesProviderConfig.shared.logoUrlString + ticker.lowercased())
             )
             
             handler?(stockModel)

@@ -27,7 +27,8 @@ class StockQuoteModel
         currentPrice: Double,
         priceDeltaInPercent: Double,
         priceDelta: Double,
-        minStep: Double
+        minStep: Double,
+        stockLogo: URL? = nil
     )
     {
         self.ticker = ticker
@@ -37,7 +38,7 @@ class StockQuoteModel
         self.priceDelta = priceDelta
         self.priceDeltaInPercent = priceDeltaInPercent
         self.minStep = minStep
-        self.stockLogo = URL(string: "https://tradernet.ru/logos/get-logo-by-ticker?ticker=" + self.ticker.lowercased())
+        self.stockLogo = stockLogo
     }
     
     func percentageDeltaIsPositive() -> Bool
