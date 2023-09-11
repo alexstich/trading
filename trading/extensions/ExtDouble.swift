@@ -45,8 +45,19 @@ extension Double
     
     func numberOfDigitsAfterComma() -> Int
     {
-        let numberString = String(self)
-        let components = numberString.split(separator: ".")
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.usesGroupingSeparator = false
+        formatter.maximumFractionDigits = 15
+        formatter.minimumFractionDigits = 0
+
+        let numberString = formatter.string(from: NSNumber(value: self))
+        
+        guard numberString != nil else {
+            return 0
+        }
+        
+        let components = numberString!.split(separator: ",")
         
         guard components.count == 2 else {
             return 0

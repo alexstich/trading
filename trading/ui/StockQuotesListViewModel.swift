@@ -58,11 +58,13 @@ class StockQuotesListViewModel: StockQuotesListViewModelProtocol
             
             let queue = DispatchQueue(label: "stock_provider.serialqueue", qos:.userInteractive)
             queue.async { [weak self] in
+                
                 if let newStockQuotes = self?.insertStockQuote(stockQuote: stockQuote) {
                     DispatchQueue.main.async { [weak self] in
                         self?.stockQuotes.onNext(newStockQuotes)
                     }
                 }
+                
             }
         }
     }
@@ -72,9 +74,9 @@ class StockQuotesListViewModel: StockQuotesListViewModelProtocol
         var stockQuotesArray = (try? self.stockQuotes.value()) ?? []
         
         var wasReplaced = false
-        for (index, quote) in stockQuotesArray.enumerated() {
-            if quote.ticker == stockQuote.ticker {
-                stockQuotesArray[index] = quote
+        for (index, currentQuote) in stockQuotesArray.enumerated() {
+            if currentQuote.ticker == stockQuote.ticker {
+                stockQuotesArray[index] = stockQuote
                 wasReplaced = true
                 break
             }

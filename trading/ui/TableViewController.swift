@@ -40,18 +40,27 @@ class TableViewController: UITableViewController
     
     private func setEvents()
     {
-        vm?.stockQuotes.subscribe(
-            onNext:{ [weak self] stockQuotes in
+        vm?.stockQuotes
+            .subscribe(
+            onNext:{ [weak self] stockQuotes_ in
                 
-                let oldItems = self?.stockQuotes ?? [StockQuoteModel]()
-                let newItems = stockQuotes
+                guard let self = self else { return }
+                
+//                self.stockQuotes = stockQuotes_
+//                self.tableView.reloadData()
+                
+                let newItems = stockQuotes_
+                let oldItems = self.stockQuotes
+
                 let changes = diff(old: oldItems, new: newItems)
 
-                self?.tableView.reload(changes: changes, section: 0, updateData: { [weak self] in
-                  self?.stockQuotes = newItems
-                })
-            }
-        ).disposed(by: disposeBag)
+                UIView.performWithoutAnimation {
+                    self.tableView.reload(changes: changes, section: 0, updateData: { [weak self] in
+                        self?.stockQuotes = newItems
+                    })
+                }
+                
+            }).disposed(by: disposeBag)
     }
     
     // MARK: - Table view data source

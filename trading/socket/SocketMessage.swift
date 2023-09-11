@@ -62,23 +62,13 @@ struct WebSocketMessage: Codable
     }
 }
 
-struct QuoteData: Codable {
-    let bap: Double?
-    let bas: Int?
-    let bbp: Double?
-    let bbs: Int?
-    let c: String?
-    let chg: Double?
-    let ltp: Double?
-    let ltr: String?
-    let name: String?
-    let lts: Int?
-    let ltt: String?
-    let n: Int?
-    let min_step: Double?
-    let pcp: Double?
-    let rev: Int?
-    let type: Int?
-    let vlt: Double?
-    let vol: Int?
+struct QuoteData: Codable
+{
+    let c: String?          // Тикер
+    let chg: Double?        // Изменение цены последней сделки в пунктах относительно цены закрытия предыдущей торговой сессии
+    let ltp: Double?        // Цена последней сделки
+    let ltr: String?        // Биржа последней сделки
+    let name: String?       // Название бумаги
+    let min_step: Double?   // Минимальный шаг цены
+    let pcp: Double?        // Изменение в процентах относительно цены закрытия предыдущей торговой сессии
 }

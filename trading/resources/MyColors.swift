@@ -10,7 +10,7 @@ import UIKit
 
 enum MyColors: String
 {
-    case perсentage_red
+    case percentage_red
     case percentage_green
     
     case white

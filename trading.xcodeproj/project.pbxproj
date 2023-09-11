@@ -20,7 +20,6 @@
 		FAEF892D2AAD02D80050C529 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF892C2AAD02D80050C529 /* Label.swift */; };
 		FAEF89342AADAD870050C529 /* StockQuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */; };
 		FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */; };
-		FAEF89392AADB7D40050C529 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89382AADB7D40050C529 /* Constants.swift */; };
 		FAEF893F2AAE18080050C529 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */; };
 		FAEF89402AAE180A0050C529 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF893E2AADCDF60050C529 /* SocketMessage.swift */; };
 		FAEF89452AAE25010050C529 /* ExtKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */; };
@@ -46,7 +45,6 @@
 		FAEF892C2AAD02D80050C529 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FAEF89332AADAD870050C529 /* StockQuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesListViewModel.swift; sourceTree = "<group>"; };
 		FAEF89362AADB72C0050C529 /* StockQuotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuotesProvider.swift; sourceTree = "<group>"; };
-		FAEF89382AADB7D40050C529 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAEF893D2AADCDF30050C529 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
 		FAEF893E2AADCDF60050C529 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
 		FAEF89442AAE25010050C529 /* ExtKeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtKeyedDecodingContainer.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				FAC8676D2AABA72A00C45C9B /* AppDelegate.swift */,
-				FAEF89382AADB7D40050C529 /* Constants.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				FAC867722AABA72A00C45C9B /* TableViewController.swift in Sources */,
 				FAEF89492AAEEA7C0050C529 /* WebSocketProviderConfig.swift in Sources */,
 				FAC8676E2AABA72A00C45C9B /* AppDelegate.swift in Sources */,
-				FAEF89392AADB7D40050C529 /* Constants.swift in Sources */,
 				FAEF892A2AACFF1F0050C529 /* MyColors.swift in Sources */,
 				FAEF89372AADB72C0050C529 /* StockQuotesProvider.swift in Sources */,
 				FAEF89202AACE3F60050C529 /* StockQuoteTableViewCell.swift in Sources */,

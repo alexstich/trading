@@ -16,25 +16,12 @@ class StockQuotesProvider
     
     private var handler: ((StockQuoteModel)->Void)?
     
+    private var stockQuotes: [String: StockQuoteModel] = [:]
+    
     func observeStockQuotes(for tickers: [String], handler: @escaping (StockQuoteModel)->Void)
     {
         self.handler = handler
-        
-        // Mock data
-        if Constants.test_mode {
-            let quote = StockQuoteModel(
-                ticker: "SBER",
-                lastTradeMarketName: "MTX",
-                stockName: "Сбербанк",
-                currentPrice: 1235231.5544,
-                priceDeltaInPercent: 30.25,
-                priceDelta: -0.00043,
-                minStep: 0.0001
-            )
-            
-            self.handler?(quote)
-        }
-        
+
         WebSocketProvider.getInstance.checkConnection()
         WebSocketProvider.getInstance.delegate = self
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -66,22 +53,40 @@ extension StockQuotesProvider: WebSocketProviderDelegate
         switch type {
         case .q:
             
-            let ticker = msg.quoteData?.c?.uppercased() ?? ""
+            setStockQuotes(msg: msg)
             
-            let stockModel = StockQuoteModel(
+            if let ticker = msg.quoteData?.c?.uppercased(), let stock = stockQuotes[ticker] {
+                handler?(stock)
+            }
+            
+        default:
+            break
+        }
+    }
+                                   
+    private func setStockQuotes(msg: WebSocketMessage)
+    {
+        if let ticker = msg.quoteData?.c?.uppercased() {
+            
+            let stockQuote = StockQuoteModel(
                 ticker: ticker,
-                lastTradeMarketName: msg.quoteData?.ltr?.uppercased() ?? "",
-                stockName: msg.quoteData?.name ?? "",
-                currentPrice: msg.quoteData?.ltp ?? 0,
-                priceDeltaInPercent: msg.quoteData?.pcp ?? 0,
-                priceDelta: msg.quoteData?.chg ?? 0,
-                minStep: msg.quoteData?.min_step ?? 0.01,
+                lastTradeMarketName: msg.quoteData?.ltr?.uppercased(),
+                stockName: msg.quoteData?.name,
+                currentPrice: msg.quoteData?.ltp,
+                priceDeltaInPercent: msg.quoteData?.pcp,
+                priceDelta: msg.quoteData?.chg,
+                minStep: msg.quoteData?.min_step,
                 stockLogo: URL(string: StockQuotesProviderConfig.shared.logoUrlString + ticker.lowercased())
             )
             
-            handler?(stockModel)
-        default:
-            break
+            if var currentQuote = stockQuotes[ticker] {
+                
+                currentQuote.merge(model: stockQuote)
+
+                stockQuotes[ticker] = currentQuote
+            } else {
+                stockQuotes[ticker] = stockQuote
+            }
         }
     }
 }

@@ -22,16 +22,12 @@ class StockQuoteTableViewCell: UITableViewCell
     @IBOutlet weak var PriceLabel: Label!
     
     static var priceDeltaInPercentMaxDigitsAfterComma: Int = 2
-    
-    static var priceMaxDigitsAfterComma: Int = 6
     static var priceMinDigitsAfterComma = 2
-    
-    static var priceDeltaMaxDigitsAfterComma: Int = 6
     static var priceDeltaMinDigitsAfterComma = 2
     
     var quote: StockQuoteModel!
     var timer: Timer?
-    var timeInterval: Double = 0.3
+    var backgroundPriceDeltaInPercentLightiningTimeInterval: Double = 0.3
     
     override func prepareForReuse()
     {
@@ -44,9 +40,6 @@ class StockQuoteTableViewCell: UITableViewCell
         
         timer?.invalidate()
         timer = nil
-        
-        hidePriceDeltaInPercentBackground()
-        
         quote = nil
     }
     
@@ -73,37 +66,46 @@ class StockQuoteTableViewCell: UITableViewCell
         setPriceDeltaInPercent()
         
         TickerLabel.text = quote.ticker.uppercased()
-        MarketAndStockNameLabel.text = quote.lastTradeMarketName.uppercased() + " | " + quote.stockName
+        MarketAndStockNameLabel.text = quote.lastTradeMarketName!.uppercased() + " | " + quote.stockName!
         
         setPriceLabel()
         setDeltaPriceLabel()
         setLogo()
+        
+        self.setNeedsLayout()
     }
     
     private func setPriceLabel()
     {
-        PriceLabel.text = quote.currentPrice.formatToString(
-            minimumFractionDigits: StockQuoteTableViewCell.priceMinDigitsAfterComma,
-            maximumFractionDigits: quote.minStep.numberOfDigitsAfterComma()
+        let maxDigitsAfterComma = quote.minStep != nil ? quote.minStep!.numberOfDigitsAfterComma() : StockQuoteTableViewCell.priceMinDigitsAfterComma
+        let minDigitsAfterComma = min(maxDigitsAfterComma, StockQuoteTableViewCell.priceMinDigitsAfterComma)
+        
+        PriceLabel.text = quote.currentPrice!.formatToString(
+            minimumFractionDigits: minDigitsAfterComma,
+            maximumFractionDigits: maxDigitsAfterComma
         )
     }
     
     private func setDeltaPriceLabel()
     {
+        let maxDigitsAfterComma = quote.minStep != nil ? quote.minStep!.numberOfDigitsAfterComma() : StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma
+        let minDigitsAfterComma = min(maxDigitsAfterComma, StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma)
+        
         PriceDeltaLabel.text =
             "( " +
-            quote.priceDelta.formatToString(
-                minimumFractionDigits: StockQuoteTableViewCell.priceDeltaMinDigitsAfterComma,
-                maximumFractionDigits: quote.minStep.numberOfDigitsAfterComma()
+            quote.priceDelta!.formatToString(
+                minimumFractionDigits: minDigitsAfterComma,
+                maximumFractionDigits: maxDigitsAfterComma
             ) +
             " )"
     }
     
     private func setPriceDeltaInPercent()
     {
+        
         showPriceDeltaInPercentBackground()
     
-        PriceDeltaInPercentLabel.text = quote.priceDeltaInPercent.formatToString(
+        PriceDeltaInPercentLabel.text = quote.priceDeltaInPercent!.formatToString(
             minimumFractionDigits: StockQuoteTableViewCell.priceDeltaInPercentMaxDigitsAfterComma,
             maximumFractionDigits: StockQuoteTableViewCell.priceDeltaInPercentMaxDigitsAfterComma
         )
@@ -140,22 +142,27 @@ class StockQuoteTableViewCell: UITableViewCell
     
     private func showPriceDeltaInPercentBackground()
     {
+        guard quote.trend != .none else {
+            hidePriceDeltaInPercentBackground()
+            return
+        }
+            
         if timer != nil {
             timer?.invalidate()
             timer = nil
         }
         
-        if quote.percentageDeltaIsPositive() {
+        if quote.trend == .positive {
             PriceDeltaInPercentLabel.backgroundColor = MyColors.percentage_green.getUIColor()
         } else {
-            PriceDeltaInPercentLabel.backgroundColor = MyColors.percentage_green.getUIColor()
+            PriceDeltaInPercentLabel.backgroundColor = MyColors.percentage_red.getUIColor()
         }
         
         PriceDeltaInPercentLabel.textColor = MyColors.white.getUIColor()
         
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(
-                timeInterval: self.timeInterval,
+                timeInterval: self.backgroundPriceDeltaInPercentLightiningTimeInterval,
                 target: self,
                 selector: #selector(self.hidePriceDeltaInPercentBackground),
                 userInfo: nil,
@@ -169,10 +176,10 @@ class StockQuoteTableViewCell: UITableViewCell
     {
         PriceDeltaInPercentLabel.backgroundColor = .clear
         
-        if quote.percentageDeltaIsPositive() {
+        if quote.priceDeltaInPercent == nil || quote.priceDeltaInPercent! >= 0 {
             PriceDeltaInPercentLabel.textColor = MyColors.percentage_green.getUIColor()
         } else {
-            PriceDeltaInPercentLabel.textColor = MyColors.percentage_green.getUIColor()
+            PriceDeltaInPercentLabel.textColor = MyColors.percentage_red.getUIColor()
         }
     }
 }

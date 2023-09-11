@@ -6,7 +6,7 @@ PODS:
   - Starscream (4.0.4)
 
 DEPENDENCIES:
-  - DeepDiff
+  - DeepDiff (~> 2.3.1)
   - Kingfisher (~> 6.3.1)
   - RxSwift (~> 6.5.0)
   - SnapKit (~> 5.6.0)
@@ -27,6 +27,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 5ad52021cbcb510ce33e0020133fb30428afa83c
+PODFILE CHECKSUM: 79bebf54d1c6f1cbebeba45b3cf6d439cbec1476
 
 COCOAPODS: 1.12.1
